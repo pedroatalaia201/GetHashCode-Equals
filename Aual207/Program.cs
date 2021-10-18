@@ -1,4 +1,5 @@
 ﻿using System;
+using Aual207.Entities;
 
 namespace Aual207
 {
@@ -6,18 +7,13 @@ namespace Aual207
     {
         static void Main(string[] args)
         {
-            string a = "Maria";
-            string b = "Alex";
+            Client a = new Client { Name = "Maria", Email = "maria@email.com" };
+            Client b = new Client { Name = "Alex", Email = "alex@email.com" };
 
             Console.WriteLine(a.Equals(b));
-            //OUTPUT: false;
-
-            string c = "Jhon";
-            string d = "Bob";
-
-            Console.WriteLine(c.GetHashCode());
-            Console.WriteLine(d.GetHashCode());
-            //This will return a int value;
+            Console.WriteLine(a == b); //OUTPUT: False, == compara o ponteiro dos objetos(referencia de memoria);
+            Console.WriteLine(a.GetHashCode());
+            Console.WriteLine(b.GetHashCode());
         }
     }
 }
